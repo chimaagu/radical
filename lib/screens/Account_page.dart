@@ -1,3 +1,4 @@
+import 'package:client_app/screens/payment_plans.dart';
 import 'package:client_app/screens/profile_page.dart';
 import 'package:flutter/material.dart';
 
@@ -76,7 +77,18 @@ class _AccountPageState extends State<AccountPage> {
             ),
           ),
           const Divider(thickness: 1.2),
-          rehboxWidget(image: "card", text: "Payment Plan"),
+          rehboxWidget(
+            image: "card",
+            text: "Payment Plan",
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const PaymentPlans(),
+                ),
+              );
+            },
+          ),
           rehboxWidget(
             image: "award",
             text: "My profile",
