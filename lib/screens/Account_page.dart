@@ -1,3 +1,4 @@
+import 'package:client_app/screens/contact_physioterapist.dart';
 import 'package:client_app/screens/payment_plans.dart';
 import 'package:client_app/screens/profile_page.dart';
 import 'package:flutter/material.dart';
@@ -102,7 +103,18 @@ class _AccountPageState extends State<AccountPage> {
             },
           ),
           rehboxWidget(image: "award", text: "Rewards Points"),
-          rehboxWidget(image: "settings", text: "Settings"),
+          rehboxWidget(
+            image: "settings",
+            text: "Settings",
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ContactPhysioTherapistScreen(),
+                ),
+              );
+            },
+          ),
           const SizedBox(height: 15),
           const Divider(
             thickness: 8,

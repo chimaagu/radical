@@ -72,8 +72,7 @@ class _LibraryState extends State<Library> with SingleTickerProviderStateMixin {
               ),
             ),
             const SizedBox(height: 20),
-            SizedBox(
-              height: 450,
+            Expanded(
               child: DefaultTabController(
                 length: 2,
                 child: TabBarView(
@@ -176,13 +175,15 @@ class _LibraryState extends State<Library> with SingleTickerProviderStateMixin {
             ],
           ),
           const SizedBox(height: 20),
-          Flexible(
+          Expanded(
             child: GridView(
               shrinkWrap: true,
               scrollDirection: Axis.vertical,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                mainAxisExtent: 200,
               ),
               physics: const BouncingScrollPhysics(),
               children: [
@@ -209,7 +210,9 @@ class _LibraryState extends State<Library> with SingleTickerProviderStateMixin {
 
   Container generalBodyWidget() {
     return Container(
-      padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 20),
+      // margin: const EdgeInsets.only(right: 10, top: 5, bottom: 5),
+      height: 190,
+      padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -224,10 +227,14 @@ class _LibraryState extends State<Library> with SingleTickerProviderStateMixin {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 80,
+            height: 90,
             width: 150,
             decoration: BoxDecoration(
               color: Colors.red,
+              image: const DecorationImage(
+                fit: BoxFit.fill,
+                image: AssetImage("images/vid1.png"),
+              ),
               borderRadius: BorderRadius.circular(10),
             ),
           ),
@@ -239,7 +246,7 @@ class _LibraryState extends State<Library> with SingleTickerProviderStateMixin {
               fontWeight: FontWeight.w500,
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 15),
           Row(
             children: [
               const Text(
@@ -266,7 +273,7 @@ class _LibraryState extends State<Library> with SingleTickerProviderStateMixin {
                 ),
               ),
             ],
-          ),
+          )
         ],
       ),
     );

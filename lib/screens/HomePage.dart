@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               width: double.maxFinite,
               decoration: BoxDecoration(
-                color: Colors.black,
+                color: const Color(0xff0D1A2E),
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Column(
@@ -43,9 +43,13 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const SizedBox(height: 15),
                   Container(
-                    height: 150,
+                    height: 165,
                     decoration: BoxDecoration(
                         color: Colors.red,
+                        image: const DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage("images/vid1.png"),
+                        ),
                         borderRadius: BorderRadius.circular(15)),
                   )
                 ],
@@ -100,6 +104,8 @@ class _HomePageState extends State<HomePage> {
 
   Container generalBodyWidget() {
     return Container(
+      margin: const EdgeInsets.only(right: 10, top: 5, bottom: 5),
+      height: 190,
       padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 10),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -119,6 +125,10 @@ class _HomePageState extends State<HomePage> {
             width: 150,
             decoration: BoxDecoration(
               color: Colors.red,
+              image: const DecorationImage(
+                fit: BoxFit.fill,
+                image: AssetImage("images/vid1.png"),
+              ),
               borderRadius: BorderRadius.circular(10),
             ),
           ),

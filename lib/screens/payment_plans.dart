@@ -1,3 +1,4 @@
+import 'package:client_app/screens/buy_basic.dart';
 import 'package:flutter/material.dart';
 
 class PaymentPlans extends StatefulWidget {
@@ -227,7 +228,14 @@ class _PaymentPlansState extends State<PaymentPlans>
               backgroundColor: const Color(0xffDE4589),
               fixedSize: const Size(double.maxFinite, 40),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const BasicPurchase(),
+                ),
+              );
+            },
             child: const Text("Buy Basic plan"),
           )
         ],
